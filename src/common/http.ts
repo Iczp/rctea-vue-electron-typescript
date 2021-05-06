@@ -13,9 +13,9 @@ const http = axios.create({
  * @param url 址址
  * @returns
  */
-function test(url: string): string {
-    return `this is Test funtion ${url}`
-}
+// function Test(url: string): string {
+//     return `this is Test funtion ${url}`
+// }
 
 // export { instance }
 export default http

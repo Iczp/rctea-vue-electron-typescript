@@ -3,6 +3,8 @@
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
+import store from './store'
+
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Scheme must be registered before the app is ready
@@ -17,13 +19,20 @@ async function createWindow() {
             // Use pluginOptions.nodeIntegration, leave this alone
             // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
             nodeIntegration: (process.env.ELECTRON_NODE_INTEGRATION as unknown) as boolean,
+            // Nodejs 支持
+            nodeIntegrationInWorker: true,
+            // vuex 支持
+            enableRemoteModule: true,
         },
     })
 
     if (process.env.WEBPACK_DEV_SERVER_URL) {
         // Load the url of the dev server if in development mode
         await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string)
-        if (!process.env.IS_TEST) win.webContents.openDevTools()
+        if (!process.env.IS_TEST)
+            win.webContents.openDevTools({
+                mode: 'detach',
+            })
     } else {
         createProtocol('app')
         // Load the index.html when not in development
@@ -75,3 +84,6 @@ if (isDevelopment) {
         })
     }
 }
+setInterval(() => {
+    store.dispatch('setUserId', 1)
+}, 3000)
