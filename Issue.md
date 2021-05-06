@@ -1,6 +1,5 @@
-### SASS安装
+### SASS 安装
 
 ```bash
 yarn add sass -D
 ```
-
