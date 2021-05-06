@@ -10,9 +10,5 @@ yarn serve
 yarn electron:serve
 ```
 
-by 
-
-[iczp.net]: http://www.iczp.net	"iczp.net"
-
-
+by [Iczp.Net](http://www.iczp.net)
 
