@@ -55,12 +55,12 @@ module.exports = {
                 },
             },
             nodeIntegration: true,
-            chainWebpackMainProcess: (config) => {
-                // Chain webpack config for electron main process only
-            },
-            chainWebpackRendererProcess: (config) => {
-                // Chain webpack config for electron renderer process only (won't be applied to web builds)
-            },
+            // chainWebpackMainProcess: (config) => {
+            //     // Chain webpack config for electron main process only
+            // },
+            // chainWebpackRendererProcess: (config) => {
+            //     // Chain webpack config for electron renderer process only (won't be applied to web builds)
+            // },
             // // Use this to change the entrypoint of your app's main process
             // mainProcessFile: 'src/myBackgroundFile.js',
             // // Use this to change the entry point of your app's render process. default src/[main|index].[js|ts]
