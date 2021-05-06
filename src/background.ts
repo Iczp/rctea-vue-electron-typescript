@@ -84,6 +84,8 @@ if (isDevelopment) {
         })
     }
 }
+let count = 0
 setInterval(() => {
-    store.dispatch('setUserId', 1)
+    count++
+    store.dispatch('setUserId', count)
 }, 3000)

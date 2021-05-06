@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+// import { createPersistedState, createSharedMutations } from 'vuex-electron'
 import { state, IState } from './state'
 
 import { ActionContext } from 'vuex'
@@ -15,4 +16,5 @@ export default new Vuex.Store({
         },
     },
     modules: {},
+    // plugins: [createPersistedState(), createSharedMutations()],
 })

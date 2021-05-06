@@ -9,12 +9,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 // import { State, Getter, Action, Mutation, namespace } from 'vuex-class'
-
+// import { State } from 'vuex-class'
 import axios from 'axios'
 
-@Component({
-    components: {},
-})
+// @Component({
+//     components: {},
+// })
 @Component
 export default class About extends Vue {
     private title = 'About Page'
